@@ -70,10 +70,16 @@
     axes.forEach(function (k) { totals[k] = 0; });
 
     var dodged = 0;
+    var picks = [];   // what they said, kept so the result can quote it back
     answers.forEach(function (ai, qi) {
       var a = qs[qi].a[ai];
-      if (!a) { dodged++; return; }          // the appended opt-out
+      if (!a) {                              // the appended opt-out
+        dodged++;
+        picks.push({ q: qs[qi].q, declined: true });
+        return;
+      }
       Object.keys(a.s).forEach(function (k) { totals[k] += a.s[k]; });
+      picks.push({ q: qs[qi].q, text: a.t, s: a.s });
     });
 
     var sum   = axes.reduce(function (n, k) { return n + totals[k]; }, 0);
@@ -96,8 +102,42 @@
       order: order,
       sum: sum,
       dodged: dodged,
+      picks: picks,
       pct: Math.round((totals[top] / (axisMax(top) || 1)) * 100)
     };
+  }
+
+  // The lines that produced this verdict, so the result can show its working
+  // instead of asserting things the person never said.
+  function evidenceFor(r) {
+    var picks = r.picks || [];
+    // Some answers are written with their own quotation marks; adding a second
+    // pair around those unbalances them, so flag which lines need them.
+    var needsQuotes = function (t) { return !/[\u201C\u201D"]/.test(String(t)); };
+
+    if (r.key === 'evasive') {
+      return picks.filter(function (p) { return p.declined; })
+        .slice(0, 3)
+        // these are the questions they skipped, not things they said
+        .map(function (p) { return { text: p.q, tag: 'no answer given', quoted: false }; });
+    }
+
+    // liar is won on effort; terminal is won on breadth, so rank by total.
+    var axis = r.key === 'liar' ? 'effort'
+             : r.key === 'terminal' ? null
+             : (AXIS_LABELS[r.key] ? r.key : r.order[0]);
+
+    return picks.filter(function (p) { return !p.declined; })
+      .map(function (p) {
+        var weight = axis ? (p.s[axis] || 0)
+                          : Object.keys(p.s).reduce(function (n, k) { return n + p.s[k]; }, 0);
+        var lead = Object.keys(p.s).sort(function (a, b) { return p.s[b] - p.s[a]; })[0];
+        return { text: p.text, tag: AXIS_LABELS[lead], weight: weight,
+                 quoted: needsQuotes(p.text) };
+      })
+      .filter(function (p) { return p.weight > 0; })
+      .sort(function (a, b) { return b.weight - a.weight; })
+      .slice(0, 3);
   }
 
   /* --------------------------------------------------------------- render */
@@ -179,6 +219,21 @@
         '<p class="kicker">' + esc(s.kicker) + '</p>' +
         '<p class="verdict-code">' + esc(v.code) + '</p>' +
         '<h1 class="hed">' + esc(spice(v.title)) + '</h1>' +
+        (function () {
+          var ev = evidenceFor(r);
+          if (!ev.length) return '';
+          return '<div class="evidence">' +
+            '<p class="evidence-label">' + esc(s.evidence || 'Why you got this') + '</p>' +
+            '<ul>' + ev.map(function (e) {
+              return '<li>' +
+                '<span class="ev-quote' + (e.quoted ? '' : ' ev-quote-raw') + '">' +
+                  esc(spice(e.text)) + '</span>' +
+                '<span class="ev-tag">' + esc(e.tag) + '</span>' +
+              '</li>';
+            }).join('') + '</ul>' +
+          '</div>';
+        })() +
+
         v.body.map(function (p) {
           return '<p class="body">' + esc(spice(p).replace(/\{d\}/g, r.dodged)) + '</p>';
         }).join('') +
@@ -204,7 +259,7 @@
         // The reveal: the other thirteen quizzes, surfaced where it pays off.
         '<div class="reveal">' +
           '<p class="reveal-hed">There are ' + (SKIN_IDS.length - 1) + ' more of these.</p>' +
-          '<p class="reveal-dek">Different site, different questions, same eight ways of being told. ' +
+          '<p class="reveal-dek">Different site, different questions, the same ' + Object.keys(VERDICTS).length + ' ways of being told. ' +
             'Send someone a version they haven\'t seen.</p>' +
           '<button class="btn btn-ghost" data-act="opensend">Pick one to send →</button>' +
         '</div>' +
@@ -237,7 +292,7 @@
         '<div class="skinbar-head">' +
           '<h2>Fourteen quizzes. One diagnosis.</h2>' +
           '<p>Each one asks its own questions in its own voice, then reaches the ' +
-            'same eight conclusions about you. Send everybody a different link.</p>' +
+            'the same ' + Object.keys(VERDICTS).length + ' conclusions about you. Send everybody a different link.</p>' +
         '</div>' +
         '<ul class="skinlist">' +
           SKIN_IDS.map(function (id) {
@@ -409,7 +464,11 @@
     state.result = {
       key: forced, verdict: VERDICTS[forced], totals: totals,
       order: axes.slice().sort(function (a, b) { return totals[b] - totals[a]; }),
-      sum: 30, dodged: 4, pct: 82
+      sum: 30, dodged: 4, pct: 82,
+      picks: QUESTION_SETS[want].slice(0, 4).map(function (q) {
+        return forced === 'evasive' ? { q: q.q, declined: true }
+                                    : { q: q.q, text: q.a[0].t, s: q.a[0].s };
+      })
     };
     state.signoff = SIGNOFFS[0];
     state.step = QUESTION_SETS[want].length + 1;

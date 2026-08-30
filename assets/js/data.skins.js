@@ -16,6 +16,7 @@ const SKINS = {
     computing: 'Calculating your result…',
     kicker: 'YOUR RESULT',
     rxLabel: 'What This Says About You',
+    evidence: "Why you got this",
     restart: 'Take It Again',
     share: 'Share Your Result'
   },
@@ -33,6 +34,7 @@ const SKINS = {
     computing: 'Submitting to Workforce Analytics…',
     kicker: 'PERFORMANCE RATING',
     rxLabel: 'Development Opportunities',
+    evidence: "Supporting documentation",
     restart: 'Resubmit Form',
     share: 'Forward to Manager',
     outro: 'This review will be retained in your file indefinitely.'
@@ -51,6 +53,7 @@ const SKINS = {
     computing: 'Analyzing {n} symptoms against 1 condition…',
     kicker: 'PRIMARY DIAGNOSIS',
     rxLabel: 'Recommended Treatment',
+    evidence: "Presenting symptoms",
     restart: 'Check Again',
     share: 'Send to a Loved One',
     outro: 'Consult a physician. Or don’t. You’ve been meaning to find one since you moved.'
@@ -69,6 +72,7 @@ const SKINS = {
     computing: 'Dialing up… please do not pick up the phone…',
     kicker: 'SYSTEM DIAGNOSIS',
     rxLabel: 'Error Log',
+    evidence: "Error log",
     restart: 'Restart Computer',
     share: 'E-Mail This Page',
     outro: 'You have (1) new message. It is from your spine.'
@@ -87,6 +91,7 @@ const SKINS = {
     computing: 'loading… (song is still playing, sorry)',
     kicker: 'ur results',
     rxLabel: 'about me',
+    evidence: "ur own answers lol",
     restart: 'retake survey',
     share: 'repost to bulletin',
     outro: 'ur in my top 8. that’s all i can offer u right now.'
@@ -105,6 +110,7 @@ const SKINS = {
     computing: 'holding space for your results…',
     kicker: 'what we found',
     rxLabel: 'gentle suggestions',
+    evidence: "what you told us",
     restart: 'start over',
     share: 'share this',
     outro: 'be well. drink water. it will not be enough.'
@@ -123,6 +129,7 @@ const SKINS = {
     computing: 'compiling personality… 87%',
     kicker: 'PROCESS EXITED WITH CODE 1',
     rxLabel: 'stack trace',
+    evidence: "$ cat evidence.log",
     restart: 'rerun',
     share: 'pipe to friend',
     outro: '// 8 tests, 8 failed. this is expected behaviour.'
@@ -141,6 +148,7 @@ const SKINS = {
     computing: 'Rendering…',
     kicker: 'SPECIFICATIONS',
     rxLabel: 'Known Limitations',
+    evidence: "The data",
     restart: 'Configure Again',
     share: 'Share',
     outro: 'Battery life: worse. Price: higher. Available in one colour: tired.'
@@ -159,6 +167,7 @@ const SKINS = {
     computing: 'PROCESSING. DO NOT REFRESH. DO NOT APPROACH THE WINDOW.',
     kicker: 'DETERMINATION',
     rxLabel: 'NOTICE OF DEFICIENCY',
+    evidence: "Statements on record",
     restart: 'SUBMIT NEW FORM',
     share: 'REQUEST DUPLICATE COPY',
     outro: 'You may appeal this determination in person, weekdays, 9:00–11:30 AM.'
@@ -177,6 +186,7 @@ const SKINS = {
     computing: 'consulting the sky…',
     kicker: 'YOUR READING',
     rxLabel: 'the cosmos advises',
+    evidence: "what the chart is reading",
     restart: 'Read Again',
     share: 'Send to your person',
     outro: 'Today: nothing will happen. Tomorrow: see today.'
@@ -195,6 +205,7 @@ const SKINS = {
     computing: 'GOING LIVE TO THE SCENE…',
     kicker: 'THE REPORT',
     rxLabel: 'WHAT AUTHORITIES ARE SAYING',
+    evidence: "The evidence",
     restart: 'REPLAY SEGMENT',
     share: 'SEND TIP',
     outro: 'We will stay on this story. We will not update it.'
@@ -213,6 +224,7 @@ const SKINS = {
     computing: 'Finding your matches…',
     kicker: 'YOUR PROFILE',
     rxLabel: 'Prompts You Should Not Answer',
+    evidence: "From your own profile",
     restart: 'Edit Profile',
     share: 'Share Profile',
     outro: 'You’ve run out of likes for today. You used them all on one person. Again.'
@@ -231,6 +243,7 @@ const SKINS = {
     computing: 'PRINTING…',
     kicker: 'TOTAL',
     rxLabel: 'ITEMISED',
+    evidence: "Items scanned",
     restart: 'NEW TRANSACTION',
     share: 'EMAIL RECEIPT',
     outro: 'NO REFUNDS. NO EXCHANGES. STORE CREDIT ONLY.'
@@ -249,6 +262,7 @@ const SKINS = {
     computing: 'Posting to your network…',
     kicker: 'KEY TAKEAWAY',
     rxLabel: '3 Lessons Any Founder Can Apply',
+    evidence: "Receipts 🧾",
     restart: 'Repost',
     share: 'Share with your network',
     outro: 'Agree? Disagree? Let me know in the comments. 👇 #blessed #grindset #authenticity'

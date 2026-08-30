@@ -292,6 +292,44 @@ body {
   color: var(--accent);
 }
 
+/* Their own answers, quoted back. This is the part that has to land — the
+   verdict below only reads as earned once you can see what produced it. */
+.evidence {
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--accent);
+  background: var(--answer-hover);
+  border-radius: 0 var(--answer-radius) var(--answer-radius) 0;
+}
+.evidence-label {
+  margin: 0 0 12px;
+  font-family: var(--font-head);
+  font-size: var(--kicker-size);
+  letter-spacing: var(--kicker-spacing);
+  text-transform: var(--kicker-transform);
+  font-weight: var(--kicker-weight);
+  color: var(--ink-soft);
+}
+.evidence ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+.evidence li { display: grid; gap: 3px; }
+.ev-quote {
+  font-weight: 600;
+  line-height: 1.45;
+  font-size: .97rem;
+}
+.ev-quote::before { content: "\201C"; }
+.ev-quote::after  { content: "\201D"; }
+/* lines that carry their own quotation marks, and skipped questions */
+.ev-quote-raw::before, .ev-quote-raw::after { content: none; }
+.ev-tag {
+  font-size: .72rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
 .meter { margin: 26px 0; padding: 18px; border: var(--answer-border); border-radius: var(--answer-radius); }
 .meter-head { margin: 0 0 14px; font-size: .88rem; color: var(--ink-soft); }
 .meter-head strong { color: var(--accent); font-size: 1.05rem; }
