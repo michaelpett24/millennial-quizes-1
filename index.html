@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-skin="quiz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OK Millennial</title>
+
+<meta name="description" content="Ten questions. One devastatingly accurate result. Fourteen completely different websites, all of which insult you identically.">
+<meta name="theme-color" content="#ffe14d">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="OK Millennial">
+<meta property="og:description" content="Ten questions. It knows. Send it to someone whose back hurts.">
+<meta property="og:image" content="https://michaelpett24.github.io/ok-millennial/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OK Millennial">
+<meta name="twitter:description" content="Ten questions. It knows. Send it to someone whose back hurts.">
+<meta name="twitter:image" content="https://michaelpett24.github.io/ok-millennial/og.png">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/skins.css">
+</head>
+<body>
+
+<h1 class="sr-only">OK Millennial — a quiz that has already made up its mind</h1>
+
+<main id="stage" aria-live="polite"></main>
+
+<section id="skinbar" aria-label="Choose a different version of this site"></section>
+
+<footer class="sitefoot">
+  <button class="linkish" data-act="togglebar">Same quiz, 14 different websites →</button>
+  <span>Built for people whose knee hurts for no reason.</span>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<noscript>
+  <p style="max-width:620px;margin:20px auto;font:16px/1.6 system-ui,sans-serif">
+    This quiz needs JavaScript. Turning it off to avoid being insulted by a website
+    is, honestly, the most millennial move available to you. Respect.
+  </p>
+</noscript>
+
+<script src="assets/js/data.questions.js"></script>
+<script src="assets/js/data.verdicts.js"></script>
+<script src="assets/js/data.skins.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
