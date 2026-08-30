@@ -102,7 +102,7 @@ const VERDICTS = {
       "You are an entire generation compressed into one person holding a canvas tote. Historians are going to use you as the example. There will be a slide."
     ],
     rx: [
-      "Genuine respect. That was a lot of damage to sustain in eight questions.",
+      "Genuine respect. That was a lot of damage to sustain in {n} questions.",
       "Have you considered simply having been born in 2003 instead?",
       "This is the ninth quiz you've taken about yourself this year. It is August."
     ],

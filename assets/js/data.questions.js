@@ -60,7 +60,7 @@ const QUESTIONS = [
     q: "Describe your retirement strategy.",
     a: [
       { t: "A 401k I open when I'm feeling emotionally strong", s: { broke: 3 } },
-      { t: "The band could get back together. I'd tour with them.", s: { nostalgia: 3 } },
+      { t: "The Pokémon cards. They're in my mom's attic.",     s: { nostalgia: 3 } },
       { t: "My parents' house. Eventually. Morbidly.",       s: { cope: 3 } },
       { t: "I have a spreadsheet and I am genuinely fine.",  s: { effort: 3 } }
     ]

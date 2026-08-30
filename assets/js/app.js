@@ -113,7 +113,7 @@
         '<h1 class="hed">' + esc(spice(s.hed)) + '</h1>' +
         '<p class="dek">' + esc(spice(s.dek)) + '</p>' +
         '<button class="btn btn-primary" data-act="start">' + esc(s.cta) + '</button>' +
-        '<p class="fineprint">' + QUESTIONS.length + ' questions · takes a minute · ruins the afternoon</p>' +
+        '<p class="fineprint">' + esc(spice(s.fine || '{n} questions · takes a minute · ruins the afternoon')) + '</p>' +
       '</section>'
     );
   }
@@ -376,10 +376,34 @@
 
   var params = new URLSearchParams(location.search);
   var want = params.get('s') || params.get('skin') || DEFAULT_SKIN;
+
+  // ?v=<verdict> skips the quiz and shows one result. Used by tools/contact-sheet.js
+  // to review every verdict in every skin without playing through each time.
+  var forced = params.get('v');
   if (want === 'random' || want === 'roulette') {
     want = SKIN_IDS[Math.floor(Math.random() * SKIN_IDS.length)];
   }
   if (params.get('spice') === 'mild') state.spice = 'mild';
+
+  if (forced && VERDICTS[forced]) {
+    state.result = {
+      key: forced,
+      verdict: VERDICTS[forced],
+      totals: (function () {
+        // plausible-looking bars so the meter reads correctly in review
+        var t = {}, ax = Object.keys(AXIS_LABELS);
+        ax.forEach(function (k, i) { t[k] = k === forced ? 14 : 10 - i; });
+        return t;
+      })(),
+      order: Object.keys(AXIS_LABELS).sort(function (a, b) {
+        return (b === forced) - (a === forced);
+      }),
+      sum: 30,
+      pct: 82
+    };
+    state.signoff = SIGNOFFS[0];
+    state.step = QUESTIONS.length + 1;
+  }
 
   setSkin(SKINS[want] ? want : DEFAULT_SKIN, false);
 })();
