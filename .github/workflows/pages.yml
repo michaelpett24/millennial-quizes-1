@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Syntax-check the scripts
         run: for f in assets/js/*.js; do node --check "$f"; done
       - name: Verify every verdict is still reachable
@@ -35,7 +35,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # enablement lets the workflow turn Pages on itself, so a fresh repo
+      # doesn't need the setting flipped by hand first.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
