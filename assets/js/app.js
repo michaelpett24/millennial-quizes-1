@@ -203,12 +203,16 @@
   /* ------------------------------------------------------------ skin bar */
 
   function linkFor(id) {
-    var u = new URL(location.href);
-    u.search = '';
-    u.hash = '';
-    u.searchParams.set('s', id);
-    if (state.spice === 'mild') u.searchParams.set('spice', 'mild');
-    return u.toString();
+    try {
+      var u = new URL(location.href);
+      u.search = '';
+      u.hash = '';
+      u.searchParams.set('s', id);
+      if (state.spice === 'mild') u.searchParams.set('spice', 'mild');
+      return u.toString();
+    } catch (e) {
+      return location.href;
+    }
   }
 
   function renderSkinbar() {
@@ -282,16 +286,22 @@
     }
   }
 
+  // Sandboxed and file:// contexts can refuse history writes — never let that
+  // break the quiz, the URL is a convenience.
+  function setUrl(mutate) {
+    try {
+      var u = new URL(location.href);
+      mutate(u);
+      history.replaceState(null, '', u.toString());
+    } catch (e) { /* the quiz works fine without it */ }
+  }
+
   function setSkin(id, push) {
     if (!SKINS[id]) id = DEFAULT_SKIN;
     state.skin = id;
     root.setAttribute('data-skin', id);
     document.title = SKINS[id].brand + ' — OK Millennial';
-    if (push) {
-      var u = new URL(location.href);
-      u.searchParams.set('s', id);
-      history.replaceState(null, '', u.toString());
-    }
+    if (push) setUrl(function (u) { u.searchParams.set('s', id); });
     renderSkinbar();
     render();
   }
@@ -341,10 +351,10 @@
 
     } else if (act === 'spice') {
       state.spice = state.spice === 'mild' ? 'spicy' : 'mild';
-      var u = new URL(location.href);
-      if (state.spice === 'mild') u.searchParams.set('spice', 'mild');
-      else u.searchParams.delete('spice');
-      history.replaceState(null, '', u.toString());
+      setUrl(function (u) {
+        if (state.spice === 'mild') u.searchParams.set('spice', 'mild');
+        else u.searchParams.delete('spice');
+      });
       renderSkinbar();
       render();
     }
