@@ -1,0 +1,413 @@
+/* ok-millennial — the wardrobe.
+   One block per skin. Mostly variable overrides; a few signature rules where
+   a skin needs real character (title bars, scanlines, torn paper edges).
+   To add a skin: add an entry to data.skins.js + a block here. */
+
+/* =========================================================== 1. LISTICLE */
+[data-skin="quiz"] {
+  --bg: #ffe14d;
+  --bg-card: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #6b6b60;
+  --accent: #ff2e63;
+  --line: #f0e6c8;
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --hed-weight: 900;
+  --hed-spacing: -.03em;
+  --radius: 20px;
+  --answer-radius: 14px;
+}
+[data-skin="quiz"] .hed { text-wrap: balance; }
+
+/* ================================================== 2. PERFORMANCE REVIEW */
+[data-skin="hr"] {
+  --bg: #eef1f4;
+  --bg-card: #ffffff;
+  --ink: #1f2933;
+  --ink-soft: #62707e;
+  --accent: #16609e;
+  --line: #d3dae1;
+  --font: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --radius: 3px;
+  --radius-btn: 3px;
+  --answer-radius: 2px;
+  --hed-weight: 600;
+  --hed-size: clamp(1.4rem, 4vw, 1.9rem);
+  --hed-spacing: 0;
+  --shadow: 0 1px 3px rgba(31,41,51,.12);
+  --kicker-color: var(--ink-soft);
+}
+[data-skin="hr"] .card { border-top: 4px solid var(--accent); }
+[data-skin="hr"] .answer { font-size: .95rem; }
+
+/* ==================================================== 3. SYMPTOM CHECKER */
+[data-skin="webmd"] {
+  --bg: #eef6fb;
+  --bg-card: #ffffff;
+  --ink: #10222e;
+  --ink-soft: #5c7382;
+  --accent: #0b8fa8;
+  --line: #d5e6ef;
+  --font: "Segoe UI", system-ui, Roboto, Helvetica, Arial, sans-serif;
+  --radius: 10px;
+  --radius-btn: 6px;
+  --answer-radius: 8px;
+  --hed-weight: 700;
+}
+[data-skin="webmd"] .verdict-code { color: #c0392b; }
+[data-skin="webmd"] .meter { background: #f4fbfd; }
+
+/* ======================================================== 4. WINDOWS 98 */
+[data-skin="y2k"] {
+  --bg: #008080;
+  --bg-card: #c0c0c0;
+  --ink: #000000;
+  --ink-soft: #3a3a3a;
+  --accent: #000080;
+  --accent-ink: #ffffff;
+  --line: #868686;
+  --font: "MS Sans Serif", "Comic Sans MS", Tahoma, Geneva, sans-serif;
+  --radius: 0;
+  --radius-btn: 0;
+  --answer-radius: 0;
+  --card-pad: 18px;
+  --shadow: 4px 4px 0 rgba(0,0,0,.45);
+  --hed-weight: 700;
+  --hed-size: clamp(1.3rem, 4.4vw, 1.9rem);
+  --answer-bg: #ffffff;
+  --answer-hover: #e8e8e8;
+  --kicker-color: #000080;
+}
+[data-skin="y2k"] .card,
+[data-skin="y2k"] .skinbar-inner {
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  padding-top: 34px;
+  position: relative;
+}
+[data-skin="y2k"] .card::before,
+[data-skin="y2k"] .skinbar-inner::before {
+  content: "◼ MillennialQuiz98 — [Running]";
+  position: absolute; inset: 2px 2px auto 2px;
+  height: 22px; line-height: 22px;
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #fff; font-size: 11px; font-weight: 700;
+  padding: 0 6px;
+}
+[data-skin="y2k"] .btn,
+[data-skin="y2k"] .answer {
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  box-shadow: none;
+}
+[data-skin="y2k"] .btn:active,
+[data-skin="y2k"] .answer:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+  transform: none;
+}
+[data-skin="y2k"] .btn-primary { background: #c0c0c0; color: #000; font-weight: 700; }
+[data-skin="y2k"] .progress, [data-skin="y2k"] .bar-track { border: 1px solid #404040; border-radius: 0; background: #fff; }
+[data-skin="y2k"] .progress-bar, [data-skin="y2k"] .bar-fill { border-radius: 0; background: #000080; }
+[data-skin="y2k"] .answer-key { border-radius: 0; }
+
+/* ============================================================= 5. TOP 8 */
+[data-skin="myspace"] {
+  --bg: #0a0a12;
+  --bg-card: #12121f;
+  --ink: #e9e6ff;
+  --ink-soft: #9d94d6;
+  --accent: #00e5ff;
+  --accent-ink: #06060c;
+  --line: #2e2a4d;
+  --font: "Comic Sans MS", "Comic Neue", Verdana, cursive;
+  --radius: 6px;
+  --answer-radius: 4px;
+  --answer-bg: #1a1830;
+  --answer-hover: #241f42;
+  --hed-weight: 700;
+  --hed-transform: lowercase;
+  --kicker-transform: lowercase;
+  --kicker-spacing: .02em;
+  --shadow: 0 0 26px rgba(0,229,255,.18);
+}
+[data-skin="myspace"] body { background-image: radial-gradient(circle at 20% 10%, #241b4d 0, transparent 45%); }
+[data-skin="myspace"] .hed { text-shadow: 0 0 12px rgba(0,229,255,.55); }
+[data-skin="myspace"] .verdict-code { color: #ff4fd8; }
+[data-skin="myspace"] .signoff { color: #ff4fd8; }
+
+/* ==================================================== 6. WELLNESS BRAND */
+[data-skin="wellness"] {
+  --bg: #f5e9e3;
+  --bg-card: #fffaf7;
+  --ink: #3d3230;
+  --ink-soft: #8d7a73;
+  --accent: #c96f52;
+  --line: #ead9d1;
+  --font: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --radius: 4px;
+  --radius-btn: 2px;
+  --answer-radius: 3px;
+  --hed-weight: 400;
+  --hed-transform: lowercase;
+  --hed-size: clamp(1.9rem, 6vw, 3rem);
+  --hed-spacing: -.01em;
+  --kicker-transform: lowercase;
+  --kicker-spacing: .22em;
+  --kicker-weight: 400;
+  --card-pad: clamp(28px, 6vw, 60px);
+  --shadow: none;
+  --card-border: 1px solid var(--line);
+  --body-lh: 1.8;
+}
+[data-skin="wellness"] .btn { letter-spacing: .12em; text-transform: lowercase; font-weight: 400; font-size: .9rem; }
+[data-skin="wellness"] .q { font-weight: 400; }
+[data-skin="wellness"] .verdict-code { font-family: var(--font); letter-spacing: .2em; text-transform: lowercase; }
+
+/* ========================================================== 7. TERMINAL */
+[data-skin="terminal"] {
+  --bg: #05060a;
+  --bg-card: #080b10;
+  --ink: #3bf07a;
+  --ink-soft: #1f8f4a;
+  --accent: #3bf07a;
+  --accent-ink: #05060a;
+  --line: #12331f;
+  --font: var(--font-mono);
+  --radius: 0;
+  --radius-btn: 0;
+  --answer-radius: 0;
+  --hed-weight: 700;
+  --hed-size: clamp(1.3rem, 4.2vw, 1.8rem);
+  --hed-transform: none;
+  --answer-bg: transparent;
+  --answer-hover: #0d1a11;
+  --shadow: 0 0 40px rgba(59,240,122,.07);
+  --body-size: .94rem;
+}
+[data-skin="terminal"] body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 40;
+  background: repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,.22) 2px 4px);
+}
+[data-skin="terminal"] .answer::before { content: "> "; color: var(--ink-soft); }
+[data-skin="terminal"] .btn-primary { border: 1px solid var(--accent); }
+[data-skin="terminal"] .hed::after {
+  content: "_"; animation: blink 1.1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ==================================================== 8. PRODUCT LAUNCH */
+[data-skin="keynote"] {
+  --bg: #000000;
+  --bg-card: #000000;
+  --ink: #f5f5f7;
+  --ink-soft: #86868b;
+  --accent: #2997ff;
+  --accent-ink: #ffffff;
+  --line: #26262a;
+  --font: "Helvetica Neue", -apple-system, system-ui, Helvetica, Arial, sans-serif;
+  --radius: 18px;
+  --card-w: 700px;
+  --card-pad: clamp(28px, 6vw, 64px);
+  --hed-weight: 600;
+  --hed-size: clamp(2.2rem, 8vw, 4rem);
+  --hed-spacing: -.035em;
+  --shadow: none;
+  --card-border: 0;
+  --answer-bg: #1c1c1e;
+  --answer-hover: #2c2c2e;
+  --answer-border: 1px solid #2c2c2e;
+  --answer-radius: 14px;
+  --kicker-spacing: .04em;
+  --kicker-transform: none;
+}
+[data-skin="keynote"] .card { text-align: center; }
+[data-skin="keynote"] .answers { text-align: left; }
+[data-skin="keynote"] .actions, [data-skin="keynote"] .bars { justify-content: center; }
+[data-skin="keynote"] .rx ul { text-align: left; }
+[data-skin="keynote"] .hed {
+  background: linear-gradient(180deg, #fff, #a0a0a8);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* =================================================== 9. GOVERNMENT FORM */
+[data-skin="dmv"] {
+  --bg: #d8d3c4;
+  --bg-card: #f6f3e9;
+  --ink: #16150f;
+  --ink-soft: #55513f;
+  --accent: #1c4a2a;
+  --line: #16150f;
+  --font: "Courier New", Courier, monospace;
+  --font-head: Arial, Helvetica, sans-serif;
+  --radius: 0;
+  --radius-btn: 0;
+  --answer-radius: 0;
+  --shadow: none;
+  --card-border: 2px solid #16150f;
+  --hed-weight: 700;
+  --hed-transform: uppercase;
+  --hed-size: clamp(1.1rem, 3.6vw, 1.5rem);
+  --hed-spacing: 0;
+  --answer-bg: transparent;
+  --answer-hover: #eae5d3;
+  --answer-border: 1px solid #16150f;
+  --kicker-color: #16150f;
+  --body-size: .95rem;
+}
+[data-skin="dmv"] .btn-primary { border: 2px solid #16150f; box-shadow: none; }
+[data-skin="dmv"] .verdict-code { border: 2px solid var(--accent); display: inline-block; padding: 4px 10px; color: var(--accent); }
+[data-skin="dmv"] .rx-label, [data-skin="dmv"] .kicker { font-family: var(--font); }
+
+/* ========================================================= 10. HOROSCOPE */
+[data-skin="astro"] {
+  --bg: #0d0a1f;
+  --bg-card: #14102b;
+  --ink: #efe9ff;
+  --ink-soft: #a196c9;
+  --accent: #c4a0ff;
+  --accent-ink: #17102e;
+  --line: #2a2350;
+  --font: Georgia, "Iowan Old Style", serif;
+  --radius: 16px;
+  --answer-bg: #1a1538;
+  --answer-hover: #241c4c;
+  --answer-radius: 12px;
+  --hed-weight: 400;
+  --hed-size: clamp(1.9rem, 6vw, 2.9rem);
+  --kicker-spacing: .28em;
+  --kicker-weight: 400;
+  --shadow: 0 0 50px rgba(196,160,255,.12);
+  --body-lh: 1.75;
+}
+[data-skin="astro"] body {
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 72% 8%,  #fff 50%, transparent),
+    radial-gradient(1px 1px at 38% 62%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 88% 44%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 22% 84%, #fff 50%, transparent);
+  background-attachment: fixed;
+}
+
+/* ===================================================== 11. BREAKING NEWS */
+[data-skin="news"] {
+  --bg: #1b1b1b;
+  --bg-card: #ffffff;
+  --ink: #101010;
+  --ink-soft: #5c5c5c;
+  --accent: #cc0000;
+  --line: #dcdcdc;
+  --font: "Helvetica Neue", Arial, sans-serif;
+  --font-head: Impact, "Arial Narrow Bold", "Helvetica Neue", sans-serif;
+  --radius: 0;
+  --radius-btn: 0;
+  --answer-radius: 0;
+  --hed-weight: 400;
+  --hed-transform: uppercase;
+  --hed-spacing: .01em;
+  --hed-size: clamp(1.6rem, 5.4vw, 2.4rem);
+  --card-border: 0;
+  --shadow: 0 10px 30px rgba(0,0,0,.5);
+}
+[data-skin="news"] .card { border-bottom: 8px solid var(--accent); }
+[data-skin="news"] .kicker {
+  background: var(--accent); color: #fff;
+  display: inline-block; padding: 5px 12px; margin-bottom: 16px;
+  font-family: var(--font-head); letter-spacing: .06em;
+}
+[data-skin="news"] .verdict-code { background: #ffd400; color: #101010; display: inline-block; padding: 3px 9px; }
+
+/* ======================================================== 12. DATING APP */
+[data-skin="dating"] {
+  --bg: #ffc629;
+  --bg-card: #ffffff;
+  --ink: #26221a;
+  --ink-soft: #7d7566;
+  --accent: #f5a201;
+  --accent-ink: #26221a;
+  --line: #f0e7d4;
+  --font: "Segoe UI", system-ui, Roboto, Helvetica, Arial, sans-serif;
+  --radius: 26px;
+  --radius-btn: 999px;
+  --answer-radius: 18px;
+  --hed-weight: 700;
+  --card-w: 480px;
+  --shadow: 0 20px 50px -20px rgba(38,34,26,.45);
+}
+[data-skin="dating"] .card { text-align: center; }
+[data-skin="dating"] .answers, [data-skin="dating"] .rx ul, [data-skin="dating"] .bars { text-align: left; }
+[data-skin="dating"] .actions { justify-content: center; }
+
+/* =========================================================== 13. RECEIPT */
+[data-skin="receipt"] {
+  --bg: #55584f;
+  --bg-card: #fdfdf8;
+  --ink: #17170f;
+  --ink-soft: #6e6e60;
+  --accent: #17170f;
+  --accent-ink: #fdfdf8;
+  --line: #c9c9bb;
+  --font: "Courier New", Courier, monospace;
+  --radius: 0;
+  --radius-btn: 0;
+  --answer-radius: 0;
+  --card-w: 420px;
+  --card-pad: 26px;
+  --shadow: 0 14px 34px rgba(0,0,0,.4);
+  --card-border: 0;
+  --hed-transform: uppercase;
+  --hed-weight: 700;
+  --hed-size: clamp(1.1rem, 4vw, 1.4rem);
+  --hed-spacing: .04em;
+  --answer-bg: transparent;
+  --answer-hover: #eeeee2;
+  --answer-border: 1px dashed var(--line);
+  --body-size: .9rem;
+  --kicker-color: var(--ink-soft);
+}
+[data-skin="receipt"] .card, [data-skin="receipt"] .skinbar-inner {
+  text-align: center;
+  /* torn paper edge */
+  -webkit-mask: linear-gradient(#000 0 0) padding-box,
+                repeating-conic-gradient(from -45deg at bottom, #000 0 25%, transparent 0 50%) bottom / 14px 8px repeat-x;
+          mask: linear-gradient(#000 0 0) padding-box,
+                repeating-conic-gradient(from -45deg at bottom, #000 0 25%, transparent 0 50%) bottom / 14px 8px repeat-x;
+  padding-bottom: 34px;
+}
+[data-skin="receipt"] .answers, [data-skin="receipt"] .rx ul, [data-skin="receipt"] .bars { text-align: left; }
+[data-skin="receipt"] .actions { justify-content: center; }
+[data-skin="receipt"] .meter, [data-skin="receipt"] .rx { border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); }
+[data-skin="receipt"] .meter { border-left: 0; border-right: 0; }
+[data-skin="receipt"] .btn-primary { border: 1px solid var(--ink); }
+
+/* ============================================ 14. PROFESSIONAL NETWORK */
+[data-skin="linkedin"] {
+  --bg: #f4f2ee;
+  --bg-card: #ffffff;
+  --ink: rgba(0,0,0,.9);
+  --ink-soft: rgba(0,0,0,.6);
+  --accent: #0a66c2;
+  --line: #e3e0dc;
+  --font: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 8px;
+  --radius-btn: 999px;
+  --answer-radius: 8px;
+  --hed-weight: 600;
+  --hed-size: clamp(1.2rem, 3.8vw, 1.55rem);
+  --hed-spacing: -.01em;
+  --shadow: 0 0 0 1px rgba(0,0,0,.08);
+  --kicker-transform: none;
+  --kicker-spacing: 0;
+  --kicker-color: var(--ink-soft);
+  --body-size: .95rem;
+}
+[data-skin="linkedin"] .card::before {
+  content: "";
+  display: block;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a66c2, #70b5f9);
+  margin-bottom: 14px;
+}
+[data-skin="linkedin"] .hed { font-weight: 400; }
+[data-skin="linkedin"] .btn-primary { box-shadow: none; }
