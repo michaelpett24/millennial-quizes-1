@@ -10,7 +10,7 @@ They are entirely different websites asking entirely different questions — 98
 of them, no two the same — and every single one arrives at the same nine
 conclusions about who you are.
 
-**→ [Take one](https://michaelpett24.github.io/ok-millennial/)**
+**→ [Take one](https://michaelpett24.github.io/millennial-quizes-1/)**
 
 ---
 
@@ -25,20 +25,20 @@ back, worded identically.
 
 | Quiz | Link | Opens with |
 |---|---|---|
-| Listicle Quiz | [`?s=quiz`](https://michaelpett24.github.io/ok-millennial/?s=quiz) | "What time did you actually get in bed last night?" |
-| Performance Review | [`?s=hr`](https://michaelpett24.github.io/ok-millennial/?s=hr) | "Describe your greatest professional strength." |
-| Symptom Checker | [`?s=webmd`](https://michaelpett24.github.io/ok-millennial/?s=webmd) | "Where would you say the discomfort is located?" |
-| Windows 98 | [`?s=y2k`](https://michaelpett24.github.io/ok-millennial/?s=y2k) | "STEP 1: Please choose a screen name." |
-| Top 8 | [`?s=myspace`](https://michaelpett24.github.io/ok-millennial/?s=myspace) | "currently listening to??" |
-| Wellness Brand | [`?s=wellness`](https://michaelpett24.github.io/ok-millennial/?s=wellness) | "how are you? and then: how are you actually?" |
-| Terminal | [`?s=terminal`](https://michaelpett24.github.io/ok-millennial/?s=terminal) | `$ uptime --since-last-real-rest` |
-| Product Launch | [`?s=keynote`](https://michaelpett24.github.io/ok-millennial/?s=keynote) | "First, choose your configuration." |
-| Government Form | [`?s=dmv`](https://michaelpett24.github.io/ok-millennial/?s=dmv) | "SECTION 1 — DECLARE YOUR HOUSING STATUS." |
-| Horoscope | [`?s=astro`](https://michaelpett24.github.io/ok-millennial/?s=astro) | "The moon is transiting your house of rest." |
-| Breaking News | [`?s=news`](https://michaelpett24.github.io/ok-millennial/?s=news) | "Where were you when you first noticed?" |
-| Dating App | [`?s=dating`](https://michaelpett24.github.io/ok-millennial/?s=dating) | "My simple pleasures…" |
-| Receipt | [`?s=receipt`](https://michaelpett24.github.io/ok-millennial/?s=receipt) | "SCAN ITEM 1 — WHAT DID YOU BUY THIS WEEK?" |
-| Professional Network | [`?s=linkedin`](https://michaelpett24.github.io/ok-millennial/?s=linkedin) | "Let's start with your journey. 🧵" |
+| Listicle Quiz | [`?s=quiz`](https://michaelpett24.github.io/millennial-quizes-1/?s=quiz) | "What time did you actually get in bed last night?" |
+| Performance Review | [`?s=hr`](https://michaelpett24.github.io/millennial-quizes-1/?s=hr) | "Describe your greatest professional strength." |
+| Symptom Checker | [`?s=webmd`](https://michaelpett24.github.io/millennial-quizes-1/?s=webmd) | "Where would you say the discomfort is located?" |
+| Windows 98 | [`?s=y2k`](https://michaelpett24.github.io/millennial-quizes-1/?s=y2k) | "STEP 1: Please choose a screen name." |
+| Top 8 | [`?s=myspace`](https://michaelpett24.github.io/millennial-quizes-1/?s=myspace) | "currently listening to??" |
+| Wellness Brand | [`?s=wellness`](https://michaelpett24.github.io/millennial-quizes-1/?s=wellness) | "how are you? and then: how are you actually?" |
+| Terminal | [`?s=terminal`](https://michaelpett24.github.io/millennial-quizes-1/?s=terminal) | `$ uptime --since-last-real-rest` |
+| Product Launch | [`?s=keynote`](https://michaelpett24.github.io/millennial-quizes-1/?s=keynote) | "First, choose your configuration." |
+| Government Form | [`?s=dmv`](https://michaelpett24.github.io/millennial-quizes-1/?s=dmv) | "SECTION 1 — DECLARE YOUR HOUSING STATUS." |
+| Horoscope | [`?s=astro`](https://michaelpett24.github.io/millennial-quizes-1/?s=astro) | "The moon is transiting your house of rest." |
+| Breaking News | [`?s=news`](https://michaelpett24.github.io/millennial-quizes-1/?s=news) | "Where were you when you first noticed?" |
+| Dating App | [`?s=dating`](https://michaelpett24.github.io/millennial-quizes-1/?s=dating) | "My simple pleasures…" |
+| Receipt | [`?s=receipt`](https://michaelpett24.github.io/millennial-quizes-1/?s=receipt) | "SCAN ITEM 1 — WHAT DID YOU BUY THIS WEEK?" |
+| Professional Network | [`?s=linkedin`](https://michaelpett24.github.io/millennial-quizes-1/?s=linkedin) | "Let's start with your journey. 🧵" |
 
 `?s=random` picks one for you, which is the correct way to send it to a group.
 
