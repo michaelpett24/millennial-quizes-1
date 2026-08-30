@@ -1,162 +1,179 @@
 # OK Millennial
 
-A ten-question quiz that has already made up its mind about you.
+Fourteen quizzes that have already made up their minds about you.
 
-It asks what time you got in bed, what your last three online orders were, and
-what hurts. Then it tells you exactly what you are, at length, in whichever of
-**fourteen completely different websites** you happened to open.
+The performance review asks about your greatest professional strength. The
+symptom checker asks where the pain is. The receipt asks what you bought this
+week. The Windows 98 build asks you to choose a screen name.
 
-**→ [Take it](https://michaelpett24.github.io/ok-millennial/)**
+They are entirely different websites asking entirely different questions — 98
+of them, no two the same — and every single one arrives at the same nine
+conclusions about who you are.
+
+**→ [Take one](https://michaelpett24.github.io/ok-millennial/)**
 
 ---
 
 ## The point
 
-The quiz never changes. The website does.
+You don't send one link. You send fourteen different ones.
 
-Send your college roommate a corporate performance review. Send your sister a
-WebMD symptom checker. Send the group chat a Windows 98 dialog box. They all
-take the same ten questions and receive the same eight possible verdicts —
-they just won't realise it until someone screenshots a result and the wording
-matches.
+Your college roommate gets a corporate self-assessment. Your sister gets a
+WebMD symptom checker. The group chat gets a DMV form. They each take a real,
+different quiz — and then compare results and find the same verdict staring
+back, worded identically.
 
-Every skin is one URL parameter:
-
-| Skin | Link | What it pretends to be |
+| Quiz | Link | Opens with |
 |---|---|---|
-| Listicle Quiz | [`?s=quiz`](https://michaelpett24.github.io/ok-millennial/?s=quiz) | The 2014 clickbait personality quiz. Where it all began. |
-| Performance Review | [`?s=hr`](https://michaelpett24.github.io/ok-millennial/?s=hr) | Sterile, corporate, somehow the meanest one. |
-| Symptom Checker | [`?s=webmd`](https://michaelpett24.github.io/ok-millennial/?s=webmd) | You looked up a headache and it said this. |
-| Windows 98 | [`?s=y2k`](https://michaelpett24.github.io/ok-millennial/?s=y2k) | You have 1 new message. It is about your knees. |
-| Top 8 | [`?s=myspace`](https://michaelpett24.github.io/ok-millennial/?s=myspace) | Black background, glitter text, one song autoplaying. |
-| Wellness Brand | [`?s=wellness`](https://michaelpett24.github.io/ok-millennial/?s=wellness) | Lowercase serif. Millennial pink. Devastating. |
-| Terminal | [`?s=terminal`](https://michaelpett24.github.io/ok-millennial/?s=terminal) | For the ones who describe themselves as "technical." |
-| Product Launch | [`?s=keynote`](https://michaelpett24.github.io/ok-millennial/?s=keynote) | One more thing: you. |
-| Government Form | [`?s=dmv`](https://michaelpett24.github.io/ok-millennial/?s=dmv) | Form 401-K. Please take a number. |
-| Horoscope | [`?s=astro`](https://michaelpett24.github.io/ok-millennial/?s=astro) | The stars have looked at your camera roll. |
-| Breaking News | [`?s=news`](https://michaelpett24.github.io/ok-millennial/?s=news) | We interrupt this broadcast to discuss your lower back. |
-| Dating App | [`?s=dating`](https://michaelpett24.github.io/ok-millennial/?s=dating) | 34. 5 miles away. Loves: being asleep. |
-| Receipt | [`?s=receipt`](https://michaelpett24.github.io/ok-millennial/?s=receipt) | An itemised list of what you have done. |
-| Professional Network | [`?s=linkedin`](https://michaelpett24.github.io/ok-millennial/?s=linkedin) | Humbled and honoured to announce that you are like this. |
+| Listicle Quiz | [`?s=quiz`](https://michaelpett24.github.io/ok-millennial/?s=quiz) | "What time did you actually get in bed last night?" |
+| Performance Review | [`?s=hr`](https://michaelpett24.github.io/ok-millennial/?s=hr) | "Describe your greatest professional strength." |
+| Symptom Checker | [`?s=webmd`](https://michaelpett24.github.io/ok-millennial/?s=webmd) | "Where would you say the discomfort is located?" |
+| Windows 98 | [`?s=y2k`](https://michaelpett24.github.io/ok-millennial/?s=y2k) | "STEP 1: Please choose a screen name." |
+| Top 8 | [`?s=myspace`](https://michaelpett24.github.io/ok-millennial/?s=myspace) | "currently listening to??" |
+| Wellness Brand | [`?s=wellness`](https://michaelpett24.github.io/ok-millennial/?s=wellness) | "how are you? and then: how are you actually?" |
+| Terminal | [`?s=terminal`](https://michaelpett24.github.io/ok-millennial/?s=terminal) | `$ uptime --since-last-real-rest` |
+| Product Launch | [`?s=keynote`](https://michaelpett24.github.io/ok-millennial/?s=keynote) | "First, choose your configuration." |
+| Government Form | [`?s=dmv`](https://michaelpett24.github.io/ok-millennial/?s=dmv) | "SECTION 1 — DECLARE YOUR HOUSING STATUS." |
+| Horoscope | [`?s=astro`](https://michaelpett24.github.io/ok-millennial/?s=astro) | "The moon is transiting your house of rest." |
+| Breaking News | [`?s=news`](https://michaelpett24.github.io/ok-millennial/?s=news) | "Where were you when you first noticed?" |
+| Dating App | [`?s=dating`](https://michaelpett24.github.io/ok-millennial/?s=dating) | "My simple pleasures…" |
+| Receipt | [`?s=receipt`](https://michaelpett24.github.io/ok-millennial/?s=receipt) | "SCAN ITEM 1 — WHAT DID YOU BUY THIS WEEK?" |
+| Professional Network | [`?s=linkedin`](https://michaelpett24.github.io/ok-millennial/?s=linkedin) | "Let's start with your journey. 🧵" |
 
 `?s=random` picks one for you, which is the correct way to send it to a group.
 
 ### Keeping it employable
 
-The site is rude by default. `?spice=mild` swaps the profanity for
-work-appropriate nonsense so you can drop it in a company Slack without a
-conversation afterwards. There's a toggle at the bottom of the page, and it
-travels with any link you copy from the skin drawer.
+Rude by default. `?spice=mild` swaps the profanity for work-appropriate
+nonsense so you can drop it in a company Slack without a conversation
+afterwards. There's a toggle at the bottom of every page, and it travels with
+any link you copy.
 
 ---
 
 ## How it decides
 
-Ten questions, four answers each. Every answer adds points across six axes:
+Seven questions per quiz, five answers each. Four of them score points across
+six axes:
 
 `decay` · `cringe` · `broke` · `nostalgia` · `effort` · `cope`
 
-Your dominant axis picks one of six verdicts. Two more are special:
+The fifth is always an opt-out, worded in that site's voice — *DECLINE TO
+ANSWER*, *VOID ITEM*, *the stars don't need to know*. Taking it costs you
+nothing except that it's counted.
 
-- **Terminal Millennial** — you took damage in all six categories at once.
+Your dominant axis picks one of six verdicts. Three more override it:
+
+- **Terminal Millennial** — you took damage in every category at once.
 - **Unverified** — you picked every flattering answer, which is its own diagnosis.
+- **Non-Responsive** — you declined three or more times, on a quiz, that you
+  clicked, voluntarily.
 
-The scoring is tuned so all eight are reachable and none of them swallows the
-quiz. `tools/balance.js` proves it, and CI runs it on every push:
+Every axis has to be winnable in every one of the fourteen sets, or the quiz is
+broken. `tools/balance.js` proves it, and CI runs it on every push:
 
 ```bash
 node tools/balance.js
 ```
 
 ```
-DISTRIBUTION over 400,000 random playthroughs
-  cringe       86347  21.6%
-  effort       79316  19.8%
-  cope         76050  19.0%
-  decay        56728  14.2%
-  nostalgia    40094  10.0%
-  broke        33050   8.3%
-  terminal     24353   6.1%
-  liar          4062   1.0%
+AXIS WINNABILITY — playing greedily for one axis in each set
+
+  set       decay  cring  broke  nosta  effor  cope
+  quiz        ok     ok     ok     ok   liar     ok
+  hr          ok     ok     ok     ok   liar     ok
+  ...
 ```
 
-If you add or reword questions, run it again. It exits non-zero if any verdict
-becomes unreachable.
+(`liar` in the effort column is correct — playing every flattering answer is
+exactly what triggers that verdict.) It exits non-zero if an axis can't win a
+set, if any verdict becomes unreachable, or if a skin has no question set.
+
+## Seeing it all at once
+
+Reviewing this by hand meant playing fourteen quizzes. Don't:
+
+```bash
+python3 -m http.server 8099 &
+node tools/contact-sheet.js
+```
+
+Writes `preview/skins.png` (all fourteen sites side by side) and
+`preview/verdicts.png` (every verdict as plain readable copy — the only honest
+way to judge whether a line earns its place).
 
 ---
 
-## Adding a skin
+## Adding a quiz
 
-Two edits, no build step, no framework.
+Three edits, no build step, no framework.
 
-**1. Add the copy** in `assets/js/data.skins.js`:
+**1. Write the questions** in `assets/js/data.questions.js`, in that site's
+voice — the framing device is what makes them funny:
 
 ```js
-airline: {
-  name: 'Boarding Pass',
-  blurb: 'Group 8. Basic Economy. No overhead bin access.',
-  brand: 'SKYWEST GENERATIONAL',
-  hed: 'Check in for your assessment',
-  dek: '{n} questions. Seat selection is not available.',
-  cta: 'Check In',
-  prog: (i, n) => `Passenger ${i} of ${n}`,
-  computing: 'Boarding…',
-  kicker: 'BOARDING GROUP',
-  rxLabel: 'Restrictions',
-  restart: 'Rebook',
-  share: 'Email Itinerary',
-  outro: 'Your seat does not recline.'   // optional
-}
+airline: [
+  { id: 'boarding', q: "Select your boarding group.", a: [
+    { t: "Group 8. I've accepted it.",              s: { cope: 3 } },
+    { t: "I paid to board earlier. It changed nothing.", s: { broke: 3 } },
+    { t: "I stand by the gate 40 minutes early.",   s: { effort: 3 } },
+    { t: "I remember when this was free.",          s: { nostalgia: 3 } } ] },
+  // ...six more
+]
 ```
 
-`{n}` is replaced with the live question count, so the copy can't go stale when
-you add questions.
+Don't write the opt-out — it's appended at render time from the skin's `none`.
 
-**2. Add the look** in `assets/css/skins.css`:
+**2. Add the copy** in `assets/js/data.skins.js` (`name`, `blurb`, `brand`,
+`hed`, `dek`, `cta`, `fine`, `none`, `prog`, `computing`, `kicker`, `rxLabel`,
+`restart`, `share`, optional `outro`). `{n}` is replaced with the live question
+count so copy can't go stale.
+
+**3. Add the look** in `assets/css/skins.css`:
 
 ```css
 [data-skin="airline"] {
   --bg: #0b2545;
   --bg-card: #ffffff;
   --accent: #d64545;
-  --font: "Helvetica Neue", Arial, sans-serif;
   --radius: 2px;
 }
 ```
 
-Everything structural — layout, spacing, the progress bar, the result bars — is
-already wired to those variables in `assets/css/base.css`. Override as few or as
-many as you like, then add a signature rule or two if the skin needs real
-character (see `y2k`'s title bar or `receipt`'s torn paper edge).
+Everything structural is already wired to those variables in `base.css`.
+Override as few as you like, then add a signature rule or two if it needs real
+character — see `y2k`'s title bar or `receipt`'s torn paper edge.
 
-It shows up in the drawer, the URL, and the copy-link list automatically.
+Then run `node tools/balance.js`. If it complains that an axis can't win your
+set, that axis needs to appear in more of your questions.
 
 ---
 
 ## Running it locally
 
-There is no build step. It's HTML, CSS and four `<script>` tags.
+No build step. HTML, CSS, four `<script>` tags.
 
 ```bash
 python3 -m http.server 8000
-# then open http://localhost:8000
+# open http://localhost:8000
 ```
 
 ## Layout
 
 ```
-index.html               the whole shell
-assets/css/base.css      structure — variables only, no colours
-assets/css/skins.css     14 skins, one block each
-assets/js/data.questions.js   the interrogation
-assets/js/data.verdicts.js    the diagnosis
-assets/js/data.skins.js       the wardrobe
+index.html                    the shell
+assets/css/base.css           structure — variables only, no colours
+assets/css/skins.css          14 skins, one block each
+assets/js/data.questions.js   14 quizzes, 98 questions
+assets/js/data.verdicts.js    the nine ways of being told
+assets/js/data.skins.js       voice and chrome per site
 assets/js/app.js              scoring, routing, share links
-tools/balance.js         proves the maths still works
+tools/balance.js              proves every axis can still win every set
+tools/contact-sheet.js        renders everything to one image
 ```
 
 ---
 
 Deployed by GitHub Actions on every push to `main`.
 
-MIT. Take it, reskin it, aim it at your own friends.
+MIT. Take it, reskin it, point it at your own friends.

@@ -20,7 +20,7 @@ const dir = path.join(__dirname, '..', 'assets', 'js');
 const data = vm.runInNewContext(
   ['data.questions.js', 'data.verdicts.js', 'data.skins.js']
     .map(f => fs.readFileSync(path.join(dir, f), 'utf8')).join('\n') +
-  '\n({ QUESTIONS, VERDICTS, SKINS, SKIN_IDS, AXIS_LABELS })'
+  '\n({ QUESTION_SETS, VERDICTS, SKINS, SKIN_IDS, AXIS_LABELS })'
 );
 
 const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
@@ -51,8 +51,8 @@ const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', 
     figcaption b{font-size:13px}
     figcaption span{color:#777;font:11px ui-monospace,monospace}
   </style>
-  <h1>OK Millennial — fourteen websites, one quiz</h1>
-  <p class="sub">Every skin runs the same ten questions and the same eight verdicts.</p>
+  <h1>OK Millennial — fourteen quizzes, one diagnosis</h1>
+  <p class="sub">Each skin asks its own questions in its own voice, then reaches the same nine verdicts.</p>
   <div class="grid">${cells}</div>`;
 
   // tall viewport: Chromium won't paint iframes that are below the fold
@@ -89,7 +89,7 @@ const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', 
     li{margin-bottom:7px;font-size:14.5px;color:#4a443c}
     .key{margin:14px 0 0;font:12px system-ui,sans-serif;color:#9a9186}
   </style>
-  <h1>The eight verdicts</h1>
+  <h1>The nine verdicts</h1>
   <p class="sub">Read these cold. If a line doesn't earn a reaction, it should be cut.</p>
   <div class="cols">${verdicts}</div>`;
 
